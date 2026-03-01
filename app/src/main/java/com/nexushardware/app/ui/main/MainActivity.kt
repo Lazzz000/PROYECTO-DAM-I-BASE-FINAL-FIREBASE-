@@ -1,0 +1,64 @@
+package com.nexushardware.app.ui.main
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.nexushardware.app.R
+import com.nexushardware.app.databinding.ActivityMainBinding
+import com.nexushardware.app.ui.admin.AgregarProductoActivity
+import android.view.View
+import com.nexushardware.app.ui.auth.LoginActivity
+import com.nexushardware.app.ui.producto.ProductosFragment
+import com.nexushardware.app.utils.AgregarListaProductos
+import com.nexushardware.app.utils.session.SessionManager
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        AgregarListaProductos.insertarProductosDemoSiVacio()
+
+        //Esto es para cargar Inicio por defecto
+        replaceFragment(InicioFragment())
+
+
+        //configurar clics
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_inicio -> replaceFragment(InicioFragment())
+                R.id.nav_productos -> replaceFragment(ProductosFragment())
+                R.id.nav_nosotros -> replaceFragment(NosotrosFragment())
+                R.id.nav_mapa -> replaceFragment(MapaFragment())
+                R.id.nav_contacto -> replaceFragment(ContactoFragment())
+                R.id.nav_carrito -> replaceFragment(CarritoFragment())//agregado para probarlo
+            }
+            true
+        }
+        binding.btnLogout.setOnClickListener {
+            SessionManager.signOut()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+        //Acceso temporal para prueba del Módulo Admin (esta oculto, mantener presionado el ícono del mapa)
+        binding.bottomNavigation.findViewById<View>(R.id.nav_mapa).setOnLongClickListener {
+            val intent = android.content.Intent(this, AgregarProductoActivity::class.java)
+            startActivity(intent)
+            true
+        }
+
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
+    }
+}

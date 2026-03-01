@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "327378897158",
+    "project_id": "nexushardware-f15eb",
+    "storage_bucket": "nexushardware-f15eb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327378897158:android:a9c3098917b9bfab5bb687",
+        "android_client_info": {
+          "package_name": "com.nexushardware.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327378897158-hgj885mo2qagdj8k92s2vvcq2ho602lm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgLCtwBtnqcyLcoQFws8Zr_mLpfvJvrvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327378897158-hgj885mo2qagdj8k92s2vvcq2ho602lm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

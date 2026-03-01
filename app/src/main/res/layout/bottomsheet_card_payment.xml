@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#121212"
+    android:fillViewport="true"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- TÍTULO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💳 Pago con Tarjeta"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Número de tarjeta -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="      Número de tarjeta"
+            app:startIconDrawable="@drawable/baseline_credit_card_24"
+            app:startIconTint="#03DAC5"
+            app:boxStrokeColor="#03DAC5"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="16"
+                android:textColor="#FFFFFF"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Nombre en tarjeta -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="      Nombre en la tarjeta"
+            app:startIconDrawable="@drawable/ic_user"
+            app:startIconTint="#03DAC5"
+            app:boxStrokeColor="#03DAC5"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCardName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Fecha -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="      MM/AA"
+            app:startIconDrawable="@drawable/baseline_calendar_month_24"
+            app:startIconTint="#03DAC5"
+            app:boxStrokeColor="#03DAC5"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etExpiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="5"
+                android:textColor="#FFFFFF"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- CVV -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="      CVV"
+            app:endIconMode="password_toggle"
+            app:startIconDrawable="@drawable/baseline_lock_24"
+            app:startIconTint="#03DAC5"
+            app:boxStrokeColor="#03DAC5"
+            android:layout_marginBottom="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCVV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:maxLength="3"
+                android:textColor="#FFFFFF"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- BOTÓN -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConfirmarTarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Confirmar Pago"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#03DAC5"
+            android:textColor="#000000"
+            app:cornerRadius="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

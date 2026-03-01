@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#121212"
+    android:fillViewport="true"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🛒  Confirmar Pedido"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Nombre -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="      Nombre completo"
+            app:startIconDrawable="@drawable/ic_user"
+            app:startIconTint="#03DAC5"
+            app:boxStrokeColor="#03DAC5"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Teléfono -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="       Teléfono"
+            app:startIconDrawable="@drawable/baseline_phone_24"
+            app:startIconTint="#03DAC5"
+            app:boxStrokeColor="#03DAC5"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textColor="#FFFFFF"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Dirección -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="        Dirección"
+            app:startIconDrawable="@drawable/ic_location"
+            app:startIconTint="#03DAC5"
+            app:boxStrokeColor="#03DAC5"
+            android:layout_marginBottom="15dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:textColor="#FFFFFF"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botón Elegir Ubicación -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Elegir mi ubicación"
+            android:textAllCaps="false"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#1F1F1F"
+            android:textColor="#03DAC5"
+            app:cornerRadius="12dp"
+            app:icon="@drawable/baseline_add_location_24"
+            app:iconTint="#03DAC5"
+            app:iconPadding="8dp"/>
+
+        <!-- Método de Pago -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="        Método de pago"
+            app:startIconDrawable="@drawable/baseline_add_card_24"
+            app:startIconTint="#03DAC5"
+            app:boxStrokeColor="#03DAC5"
+            android:layout_marginBottom="20dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinnerPago"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="#FFFFFF"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Confirmar -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConfirmarPedido"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Confirmar Compra"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="#03DAC5"
+            android:textColor="#000000"
+            app:cornerRadius="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

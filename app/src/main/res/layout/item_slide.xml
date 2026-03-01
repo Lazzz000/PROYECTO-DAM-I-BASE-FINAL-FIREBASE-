@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="#1F1F1F">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_overlay"/>
+
+        <ImageView
+            android:id="@+id/imageSlide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:alpha="0.6"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/titleSlide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#03DAC5"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/descSlide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#E0E0E0"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
